@@ -20,7 +20,7 @@ int main()
 
 	text.printText();  // tac
 
-	//text.reverseText();
+	text.reverseText();
 
 	text.printText();  // cat
 

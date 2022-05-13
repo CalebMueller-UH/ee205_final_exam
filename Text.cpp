@@ -21,13 +21,34 @@ void Text::pushNewLetter( char newLetter )
 
 void Text::printText()
 {
-	Letter* cur = head;
+	Letter* cursor = head;
 
-	while( cur != nullptr )
+	while( cursor != nullptr )
 	{
-		cout << cur->value;
-		cur = cur->next;
+		cout << cursor->value;
+		cursor = cursor->next;
 	}
 
 	cout << endl;
+}
+
+void Text::reverseText()
+{
+	Text* temp = new Text();
+
+	Letter* cursor = head;
+	while( cursor != nullptr )
+	{
+		temp->pushNewLetter( cursor->value );
+		cursor = cursor->next;
+	}
+
+	cursor = this->head;
+	Letter* tempCursor = temp->head;
+	while( cursor != nullptr )
+	{
+		cursor->value = tempCursor->value;
+		cursor = cursor->next;
+		tempCursor = tempCursor->next;
+	}
 }

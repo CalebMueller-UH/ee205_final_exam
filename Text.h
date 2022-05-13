@@ -27,6 +27,8 @@ class Text
   void pushNewLetter( char newLetter );
 
   void printText();
+
+  void reverseText();
 };
 
 #endif //EE205_FINAL_EXAM_TEXT_H
