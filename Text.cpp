@@ -23,6 +23,12 @@ void Text::printText()
 {
 	Letter* cursor = head;
 
+	if( cursor == nullptr )
+	{
+		cout << "No letters" << endl;
+		return;
+	}
+
 	while( cursor != nullptr )
 	{
 		cout << cursor->value;
@@ -34,21 +40,34 @@ void Text::printText()
 
 void Text::reverseText()
 {
-	Text* temp = new Text();
+	Text* tempText = new Text();
 
 	Letter* cursor = head;
 	while( cursor != nullptr )
 	{
-		temp->pushNewLetter( cursor->value );
+		tempText->pushNewLetter( cursor->value );
 		cursor = cursor->next;
 	}
 
 	cursor = this->head;
-	Letter* tempCursor = temp->head;
+	Letter* tempCursor = tempText->head;
 	while( cursor != nullptr )
 	{
 		cursor->value = tempCursor->value;
 		cursor = cursor->next;
 		tempCursor = tempCursor->next;
+	}
+	delete tempCursor;
+	delete tempText;
+}
+
+Text::~Text()
+{
+	Letter* cursor = head;
+	while( cursor != nullptr )
+	{
+		Letter* nxt = cursor->next;
+		delete cursor;
+		cursor = nxt;
 	}
 }

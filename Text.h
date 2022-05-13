@@ -29,6 +29,8 @@ class Text
   void printText();
 
   void reverseText();
+
+  ~Text();
 };
 
 #endif //EE205_FINAL_EXAM_TEXT_H
