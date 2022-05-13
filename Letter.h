@@ -17,10 +17,10 @@ class Letter
 {
   friend class Text;
 
-  protected:
+  protected: ///////////////// Protected Member Variables /////////////////
   char value;
 
-  public:
+  public: ///////////////// Public Member Variables /////////////////
   Letter* next{nullptr};
 };
 

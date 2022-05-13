@@ -20,16 +20,17 @@ using std::endl;
 
 class Text
 {
-  private:
+  private: ///////////////// Private Member Variables /////////////////
   Letter* head{nullptr};
 
-  public:
+  public: ///////////////// Public Methods /////////////////
   void pushNewLetter( char newLetter );
 
   void printText();
 
   void reverseText();
 
+  public: ///////////////// Destructor /////////////////
   ~Text();
 };
 
